@@ -29,7 +29,7 @@ export function drawClock(ctx, radius) {
 function drawFace(ctx, radius) {
   // Draw the white circle:
   ctx.beginPath();
-  ctx.arc(0, 0, radius * 0.95, 0, 2 * Math.PI);
+  ctx.arc(0, 0, radius * 0.94, 0, 2 * Math.PI);
   ctx.fillStyle = 'white';
   ctx.fill();
 
@@ -76,23 +76,25 @@ function drawTime(ctx, radius){
   // Calculate the angle of the hour hand, and draw it a length (50% of radius), and a width (7% of radius):
   hour = hour % 12;
   hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-  drawHand(ctx, hour, radius*0.5, radius*0.07);
+  drawHand(ctx, hour, radius*0.5, radius*0.10);
   
   // minute
-  // Calculate the angle of the minute hand, and draw it a length (80% of radius), and a width (7% of radius):
+  // Calculate the angle of the minute hand, and draw it a length (80% of radius), and a width (5% of radius):
   minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-  drawHand(ctx, minute, radius*0.8, radius*0.07);
+  drawHand(ctx, minute, radius*0.8, radius*0.05);
   
   // second
   // Calculate the angle of the hour hand, and draw it a length (90% of radius), and a width (7% of radius):
   second = (second*Math.PI/30);
-  drawHand(ctx, second, radius*0.9, radius*0.02);
+  drawHand(ctx, second, radius*0.9, radius*0.02, 'red'); // the hand is red
 }
 
-function drawHand(ctx, pos, length, width) {
+function drawHand(ctx, pos, length, width, color = 'black') {
   ctx.beginPath();
   ctx.lineWidth = width;
   ctx.lineCap = "round";
+  ctx.strokeStyle = color;
+
   ctx.moveTo(0,0);
   ctx.rotate(pos);
   ctx.lineTo(0, -length);
