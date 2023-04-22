@@ -1,10 +1,4 @@
 export function drawClock(ctx, radius) {
-  // Remap the (0,0) position (of the drawing object) to the center of the canvas:
-  ctx.translate(radius, radius);
-
-  // Remap the (0,0) position (of the drawing object) to the center of the canvas:
-  radius = radius * 0.90
-
   drawFace(ctx, radius);
   drawNumbers(ctx, radius);
   drawTime(ctx, radius);
