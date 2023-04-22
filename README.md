@@ -1,6 +1,6 @@
 # canvas-clock-app
 
-![the clock app](docs/img/the-clock.jpg)
+![the clock app](docs/img/the-styled-clock.jpg)
 
 Exercise to use the HTML Canvas.
 
