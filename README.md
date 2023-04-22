@@ -1,5 +1,7 @@
 # canvas-clock-app
 
+![the clock app](docs/img/the-clock.jpg)
+
 Exercise to use the HTML Canvas.
 
 [Canvas Clock Tutorial](https://www.w3schools.com/graphics/canvas_clock.asp)
